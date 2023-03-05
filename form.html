@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Activity</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script language="javascript"  type="text/javascript">  
+			function  validForm(){
+            var pass = document.forms["regform"]["password"].value;
+            var birthYear = Number(document.forms["regform"]["bday"].value.substring(0,4));
+            var age = (new Date().getFullYear()) - birthYear;
+
+            let flagpass = true;
+            let flagage = true;
+            console.log(pass);
+            console.log(birthYear);
+            console.log(age);
+
+            if(pass.length < 8){
+                document.getElementById("passId").innerHTML="Password must be at least 8 characters.";
+                flagpass = false;
+            } else{
+                document.getElementById("passId").innerHTML = "";
+            }
+
+            if (age < 21){
+                document.getElementById("ageId").innerHTML="Minors are not allowed!";
+                flagage = false;
+            }else{
+                document.getElementById("ageId").innerHTML = "";
+            }
+
+            if(flagage && flagpass){
+                document.getElementById("alert").innerHTML = "Hooray! Your account has been successfully created.";
+            }
+            else{
+                document.getElementById("alert").innerHTML = "";
+            }
+        }
+    
+    </script>
+</head>
+<body>
+	<form id="regform">
+		<h1>REGISTRATION FORM</h1>
+		<p id="alert" style="color:green;"></p>
+		First Name: <input type="text" name="firstname">
+		<br>
+		Last Name: <input type="text" name="lastname">
+		<br>
+		Nick Name: <input type="text" name="nickname">
+		<br>
+		Email <input type="email" name="email">
+		<br>
+		Password: <input type="password" name="password">
+		<p id="passId" style="color:red;"></p>
+		<br>
+		Date of Birth: <input type="date" name="bday">
+		<p id="ageId" style="color:red;"></p>
+		<br>
+		Gender: <input type="radio" name="male" value="male">
+		Male
+		<input type="radio" name="female" value="female">
+		Female
+		<br>
+		Mobile: <input type="number" name="mobile">
+		<br>
+		Address: <textarea name="address" cols="30" rows="10"></textarea>
+		<br>
+		<input type="Submit" name="submit" value="Submit" onclick="validForm()">
+		<input type="reset">
+
+	</form>
+</body>
+</html>

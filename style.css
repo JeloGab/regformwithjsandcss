@@ -1,0 +1,39 @@
+body {
+    background: lightslategrey;
+    font-family: 'Oswald';			
+}
+input[ type="reset"]{
+    color:white;
+    background-color:red;
+}
+input[type="submit"]{
+    background-color:green;
+    color:white;
+}
+form {
+    margin-left:42%;
+    margin-top:40px;
+    width: 250px;
+    background: white;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 20px 20px 20px 20px;
+}
+input[ type="text"]{
+    width: 100%;
+}
+input[ type="email"]{
+    width: 100%;
+}
+input[ type="password"]{
+    width: 100%;
+}
+input[ type="date"]{
+    width: 100%;
+}
+input[ type="number"]{
+    width: 100%;
+}
+textarea{
+    width: 100%;
+}
